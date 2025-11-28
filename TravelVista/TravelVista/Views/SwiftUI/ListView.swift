@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListView: View {
-    let regions: [Region] = Service().load("Source.json")
+    let regions: [Region] = DataService().load("Source.json")
 
     var body: some View {
         List {

@@ -1,5 +1,5 @@
 //
-//  Service.swift
+//  DataService.swift
 //  TravelVista
 //
 //  Created by Amandine Cousin on 18/12/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Service {
+class DataService {
     // Fonction qui permet de recupérer les données d'un fichier
     // Et qui les transforme en données utilisables en Swift
     // Ici nous l'utilisons uniquement pour notre fichier Source.json
