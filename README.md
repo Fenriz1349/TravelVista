@@ -1,40 +1,55 @@
-![iOS](https://img.shields.io/badge/iOS-17.2+-blue.svg)
-![Swift](https://img.shields.io/badge/Swift-5.0+-orange.svg)
-![Xcode](https://img.shields.io/badge/Xcode-15.0+-lightgrey.svg)
+![iOS](https://img.shields.io/badge/iOS-17.2+-0A84FF?style=for-the-badge&logo=apple&logoColor=white)
+![Swift](https://img.shields.io/badge/Swift-5.0+-FA7343?style=for-the-badge&logo=swift&logoColor=white)
+![Xcode](https://img.shields.io/badge/Xcode-15.0+-147EFB?style=for-the-badge&logo=xcode&logoColor=white)
+![SwiftUI](https://img.shields.io/badge/SwiftUI-0071E3?style=for-the-badge&logo=swift&logoColor=white)
+![UIKit](https://img.shields.io/badge/UIKit-2C2C2E?style=for-the-badge&logo=swift&logoColor=white)
 
-# TravelVista
+# 🌍 TravelVista
 
-A travel companion iOS app that showcases the integration of SwiftUI into a UIKit-based architecture. Browse countries by region, view detailed information, and explore locations on interactive maps.
+*A travel companion iOS app showcasing seamless SwiftUI and UIKit integration*
 
-## Features
+[Features](#-features) • [Tech Stack](#-tech-stack) • [Architecture](#-architecture) • [Installation](#-installation) • [Testing](#-testing)
 
-- **Hybrid Architecture**: Seamlessly combines UIKit and SwiftUI components
-- **Regional Organization**: Countries organized by continent for easy browsing
-- **Country Details**: Rich information including descriptions, capital cities, and ratings
-- **Interactive Maps**: View country capitals on MapKit with zoom and pan capabilities
-- **Responsive UI**: Custom designed interface with smooth navigation between screens
-- **Unit & UI Tests**: Comprehensive test coverage for data models and view controllers
+---
 
-## Technical Stack
+## 📱 Overview
 
-- **UI Frameworks**: UIKit + SwiftUI integration using `UIHostingController`
-- **Architecture**: MVC pattern with Service layer for data loading
-- **Data**: JSON-based data source with Codable protocol
-- **Maps**: MapKit for location visualization
-- **Testing**: XCTest with unit and UI testing targets
+TravelVista is a modern iOS travel app that demonstrates best practices for integrating SwiftUI into UIKit-based projects. Browse countries by region, explore detailed information, and visualize locations on interactive maps.
 
-## Project Structure
+## ✨ Features
 
+- 🔄 **Hybrid Architecture** - Seamless SwiftUI and UIKit integration
+- 🌎 **Regional Organization** - Countries grouped by continent
+- 📋 **Rich Details** - Comprehensive country information with ratings
+- 🗺️ **Interactive Maps** - MapKit integration with capital city markers
+- 🎨 **Modern UI** - Custom designed interface with smooth transitions
+
+## 🛠 Tech Stack
+
+| Component | Technology |
+|-----------|-----------|
+| **UI Frameworks** | UIKit + SwiftUI |
+| **Architecture** | MVC with Service Layer |
+| **Data Parsing** | Codable Protocol |
+| **Maps** | MapKit |
+| **Testing** | XCTest |
+| **Integration** | UIHostingController & UIViewControllerRepresentable |
+
+## 🏗 Architecture
+```
 TravelVista/
-├── App/
+├── 📱 App/
 │   └── AppDelegate.swift
-├── Models/
+│
+├── 🎯 Models/
 │   ├── Country.swift
 │   ├── Region.swift
 │   └── Coordinates.swift
-├── Services/
+│
+├── 🔧 Services/
 │   └── DataService.swift
-├── Views/
+│
+├── 🎨 Views/
 │   ├── SwiftUI/
 │   │   ├── ListView.swift
 │   │   ├── CountryRow.swift
@@ -42,83 +57,86 @@ TravelVista/
 │   └── UIKit/
 │       ├── DetailViewController.swift
 │       └── MapViewController.swift
-├── UIKit-SwiftUI Bridges/
+│
+├── 🌉 UIKit-SwiftUI Bridges/
 │   └── DetailViewRepresentable.swift
-├── Resources/
+│
+├── 📦 Resources/
 │   ├── Assets.xcassets
 │   ├── Main.storyboard
 │   └── LaunchScreen.storyboard
-├── Preview Content/
+│
+├── 👁️ Preview Content/
 │   └── PreviewDataProvider.swift
-└── Tests/
-├── ModelTests.swift
-└── MapViewControllerTests.swift
+│
+└── 🧪 Tests/
+    ├── ModelTests.swift
+    └── MapViewControllerTests.swift
+```
 
-## Key Implementation Details
+### Key Design Patterns
 
-### SwiftUI-UIKit Integration
-- SwiftUI views are hosted in UIKit using `UIHostingController`
-- UIKit view controllers are wrapped for SwiftUI navigation using `UIViewControllerRepresentable`
-- Demonstrates bidirectional framework communication
+- **MVC + Service Layer** for clean separation of concerns
+- **UIHostingController** bridges SwiftUI views into UIKit
+- **UIViewControllerRepresentable** wraps UIKit controllers for SwiftUI
+- **Codable** protocol for JSON data decoding
 
-### Data Flow
-- JSON data is loaded at app startup via the DataService layer
-- Data is decoded using Swift's Codable protocol
-- Regions and countries are propagated through the view hierarchy
+## 📋 Requirements
 
-### Navigation
-- Main navigation implemented in SwiftUI (ListView)
-- Detail screens transition between UIKit and SwiftUI
-- Full-screen map view accessible from detail screen
-
-## Getting Started
-
-### Requirements
 - iOS 17.2+
 - Xcode 15.0+
 - Swift 5.0+
 
-### Installation
-1. Clone the repository
-2. Open `TravelVista.xcodeproj`
-3. Select a simulator or connected device
-4. Press Cmd+R to build and run
+## 🚀 Installation
 
-## Testing
-
-The project includes comprehensive test coverage:
+1. **Clone the repository**
 ```bash
-# Run all tests
-Cmd+U
+git clone https://github.com/yourusername/TravelVista.git
+cd TravelVista
+```
 
-# Run specific test target
-Product → Scheme → TravelVistaTests
+2. **Open in Xcode**
+```bash
+open TravelVista.xcodeproj
+```
+
+3. **Build and Run**
+- Select a simulator or device
+- Press `⌘R` to run
+
+## 🧪 Testing
+
+### Run All Tests
+```bash
+⌘U in Xcode
 ```
 
 ### Test Targets
-- **TravelVistaTests**: Unit tests for data models and view controllers
-- **TravelVistaUITests**: UI tests for user interactions
+- **TravelVistaTests** - Unit tests for models and services
+- **TravelVistaUITests** - UI interaction tests
 
-## What I Learned
+### Run Specific Test Target
+```
+Product → Scheme → [Select Test Target]
+```
 
-This project demonstrates proficiency in:
-- Integrating SwiftUI into legacy UIKit projects
-- Modern iOS architecture patterns
-- SwiftUI component composition and reusability
-- MapKit integration for location visualization
-- JSON data parsing with Codable protocol
-- iOS testing practices
-- Code organization and refactoring
+## 💡 What I Learned
 
-## Future Enhancements
+- ✅ Integrating SwiftUI into legacy UIKit codebases
+- ✅ Bidirectional communication between UI frameworks
+- ✅ Modern iOS architecture patterns
+- ✅ MapKit integration and coordinate handling
+- ✅ JSON data parsing with Codable
+- ✅ iOS testing best practices
 
-- Add search and filtering functionality
-- Implement user ratings and favorites
-- Add weather information for destinations
-- Integrate real-world travel APIs
-- Add offline mode support
-- Implement dark mode optimizations
-
-## License
+## 📄 License
 
 This project is for educational purposes.
+
+---
+
+<div align="center">
+
+⭐ Star this repo if you find it helpful!
+
+</div>
